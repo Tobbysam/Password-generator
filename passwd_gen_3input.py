@@ -6,7 +6,7 @@ import random
 #variables to generate password
 alphabets = list(string.ascii_letters)
 numerals = list(string.digits)
-special_char = list("!#$%&_-+@?")
+special_char = list("!#$%&-+@?")
 characters = list(alphabets+(list(numerals)+special_char))
 
 
@@ -47,6 +47,7 @@ def password_generator():
         password.append(random.choice(special_char))
 
     #auto complete charater count when specified character sum < lenght specified
+    #user is able to input lower than 12, program auto-completes count 
     if char_count < lenght:
         random.shuffle(characters)
         for i in range (lenght - char_count):
